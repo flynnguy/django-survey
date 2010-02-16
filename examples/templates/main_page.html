@@ -1,0 +1,27 @@
+{% extends "base.html" %}{% load i18n %}
+{% block styles %}
+{% endblock %}
+{% block content %}
+<h1>{% trans "django-survey" %}</h1>
+<p><a href="http://code.google.com/p/django-survey/">django-survey</a> is a <a href="http://djangoplugables.com/">plugable application</a> that can be used to extend your web application. It provides the capability to author and take surveys, in addition of these you get an instant analysis of the answers. This system has been designed to be easily extended and customized.</p>
+<p>Question types can be added externally but the following types are built-in :</p>
+<ul>
+    <li>Text Input</li>
+    <li>Text Area</li>
+    <li>Select One Choice</li>
+    <li>Radio List</li>
+    <li>Radio Image List</li>
+    <li>Checkbox List</li>
+</ul>
+
+<h2>Use cases</h2>
+<h3>Take a survey</h3>
+<p>This <a href="{% url surveys-visible %}">page</a> lists the existing surveys that can be taken</p>
+<h3>Add or edit a survey</h3>
+<p>This <a href="{% url surveys-editable %}">page</a> lists the surveys that can be edited by the authentified user. The access to this page is restricted to user that are authentified, if you are not yet you will be prompted for a username and a password. The default database come with an existing user admin/admin.</p>
+<h2>Authors</h2>
+<ul>
+    <li>Doug Napoleone</li>
+    <li>Yann Malet</li>
+</ul>
+{% endblock %}

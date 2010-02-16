@@ -1,0 +1,20 @@
+{% extends "survey/base.html" %}{% load i18n %}
+{% block styles %}
+<style type="text/css">
+input[type="radio"] { vertical-align: top; }
+span.required {color:red;}
+span.helptext {color:green;}
+div.horizontal ul li {padding-left:10px; margin-left:10px; display:inline;}
+div.horizontal ul {margin-left:20px; padding-left:10px; display: inline;}
+</style>
+{% endblock %}
+{% block content %}
+<h1>{{ title }}</h1>
+
+<form method="post" class="focus-input" action="">
+    {% for question_form in survey.forms %}
+        {{ question_form.as_template }}
+    {% endfor %}
+    <div class="submit-row"><input type="submit" value="{% trans 'Submit' %}" class="default" name="__vote" /></div>
+</form>
+{% endblock %}

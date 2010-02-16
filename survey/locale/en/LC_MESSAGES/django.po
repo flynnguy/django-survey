@@ -1,0 +1,365 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-10-10 17:19-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: forms.py:32
+msgid "this question is optional"
+msgstr ""
+
+#: forms.py:48 forms.py:107 forms.py:141 forms.py:149
+msgid "This field is required."
+msgstr ""
+
+#: forms.py:144
+msgid "Invalid Choice."
+msgstr ""
+
+#: forms.py:220
+msgid "Date:"
+msgstr ""
+
+#: forms.py:220
+msgid "Time:"
+msgstr ""
+
+#: forms.py:234 forms.py:237
+msgid "The title of the survey must be unique."
+msgstr ""
+
+#: models.py:35
+msgid "survey title"
+msgstr ""
+
+#: models.py:36
+msgid "slug"
+msgstr ""
+
+#: models.py:37
+msgid "description"
+msgstr ""
+
+#: models.py:38
+msgid ""
+"This field appears on the public web site and should give an overview to the "
+"interviewee"
+msgstr ""
+
+#: models.py:42
+msgid "survey starts accepting submissions on"
+msgstr ""
+
+#: models.py:43
+msgid "survey stops accepting submissions on"
+msgstr ""
+
+#: models.py:45
+msgid "survey is visible"
+msgstr ""
+
+#: models.py:46
+msgid "survey results are public"
+msgstr ""
+
+#: models.py:47
+msgid "restrict the survey to authentified user"
+msgstr ""
+
+#: models.py:49
+msgid "allows multiple interviews"
+msgstr ""
+
+#: models.py:51
+msgid "template name"
+msgstr ""
+
+#: models.py:53
+msgid ""
+"This field is used to define a custom template (Example: 'dj_survey/template/"
+"my_add_interview_forms.html')."
+msgstr ""
+
+#: models.py:100
+msgid "private"
+msgstr ""
+
+#: models.py:101
+msgid "open"
+msgstr ""
+
+#: models.py:103
+msgid "opens "
+msgstr ""
+
+#: models.py:104
+msgid "closed"
+msgstr ""
+
+#: models.py:161
+msgid "survey"
+msgstr ""
+
+#: models.py:162
+msgid "question type"
+msgstr ""
+
+#: models.py:164
+msgid "required"
+msgstr ""
+
+#: models.py:165
+msgid "question text"
+msgstr ""
+
+#: models.py:166 models.py:227 templates/survey/survey_edit.html:14
+msgid "order"
+msgstr ""
+
+#: models.py:170 models.py:223
+msgid "image"
+msgstr ""
+
+#: models.py:175
+msgid "minimum number of choices"
+msgstr ""
+
+#: models.py:177
+msgid "maximum number of choices"
+msgstr ""
+
+#: models.py:181
+msgid "Html Style"
+msgstr ""
+
+#: models.py:219 models.py:255
+msgid "question"
+msgstr ""
+
+#: models.py:220
+msgid "choice text"
+msgstr ""
+
+#: models.py:252
+msgid "user"
+msgstr ""
+
+#: models.py:258
+msgid "session key"
+msgstr ""
+
+#: models.py:259
+msgid "answer text"
+msgstr ""
+
+#: models.py:262
+msgid "Interview unique identifier"
+msgstr ""
+
+#: views.py:64
+msgid "Thank You"
+msgstr ""
+
+#: views.py:93
+msgid "Cookies must be enabled."
+msgstr ""
+
+#: views.py:156 views.py:184
+msgid "Add a survey"
+msgstr ""
+
+#: views.py:204
+msgid "Delete survey"
+msgstr ""
+
+#: views.py:228 templates/survey/survey_edit.html:30
+msgid "Add a question"
+msgstr ""
+
+#: views.py:259
+msgid "Update question"
+msgstr ""
+
+#: views.py:283
+msgid "Delete question"
+msgstr ""
+
+#: views.py:308 templates/survey/survey_edit.html:45
+msgid "Add a choice"
+msgstr ""
+
+#: views.py:336
+msgid "Update choice"
+msgstr ""
+
+#: views.py:359
+msgid "Delete choice"
+msgstr ""
+
+#: views.py:377 views.py:394 templates/survey/survey_list.html:4
+msgid "Surveys"
+msgstr ""
+
+#: views.py:417 views.py:447
+msgid "Insufficient Privileges."
+msgstr ""
+
+#: views.py:421
+msgid "Results"
+msgstr ""
+
+#: views.py:450 templates/survey/editable_survey_list.html:19
+msgid "Submission"
+msgstr ""
+
+#: templates/admin/survey/choice/edit_inline_tabular.html:14
+#: templates/admin/survey/question/edit_inline_tabular.html:14
+#: templates/survey/choice_confirm_delete.html:15
+#: templates/survey/editable_survey_list.html:26
+#: templates/survey/image_confirm_delete.html:14
+#: templates/survey/question_confirm_delete.html:15
+#: templates/survey/survey_confirm_delete.html:16
+#: templates/survey/survey_edit.html:29 templates/survey/survey_edit.html:44
+#: templates/survey/survey_edit.html:58
+msgid "Delete"
+msgstr ""
+
+#: templates/survey/answers_list.html:21
+msgid "Interview"
+msgstr ""
+
+#: templates/survey/answers_list.html:30
+msgid "Vote"
+msgstr ""
+
+#: templates/survey/answers_list.html:30 templates/survey/answers_list.html:44
+msgid "Answer"
+msgstr ""
+
+#: templates/survey/answers_list.html:38
+msgid "vote"
+msgstr ""
+
+#: templates/survey/answers_list.html:44
+msgid "of"
+msgstr ""
+
+#: templates/survey/choice_add.html:10
+msgid "Delete Image"
+msgstr ""
+
+#: templates/survey/choice_add.html:15 templates/survey/question_add.html:16
+#: templates/survey/survey_add.html:19 templates/survey/survey_detail.html:18
+#: templates/test/survey_detail.html:21
+msgid "Submit"
+msgstr ""
+
+#: templates/survey/choice_confirm_delete.html:11
+#: templates/survey/question_confirm_delete.html:11
+#: templates/survey/survey_confirm_delete.html:11
+msgid "Are you sure you want to delete the following survey ?"
+msgstr ""
+
+#: templates/survey/editable_survey_list.html:7
+msgid "Add survey"
+msgstr ""
+
+#: templates/survey/editable_survey_list.html:10
+#: templates/survey/survey_edit.html:18 templates/survey/survey_list.html:7
+msgid "Survey"
+msgstr ""
+
+#: templates/survey/editable_survey_list.html:10
+#: templates/survey/survey_list.html:7
+msgid "Status"
+msgstr ""
+
+#: templates/survey/editable_survey_list.html:10
+#: templates/survey/survey_list.html:7
+msgid "Info"
+msgstr ""
+
+#: templates/survey/editable_survey_list.html:10
+#: templates/survey/survey_edit.html:15
+msgid "Actions"
+msgstr ""
+
+#: templates/survey/editable_survey_list.html:21
+#: templates/survey/survey_list.html:19
+msgid "No Submissions."
+msgstr ""
+
+#: templates/survey/editable_survey_list.html:24
+#: templates/survey/survey_list.html:22
+msgid "completed"
+msgstr ""
+
+#: templates/survey/editable_survey_list.html:24
+#: templates/survey/survey_list.html:22
+msgid "this survey."
+msgstr ""
+
+#: templates/survey/editable_survey_list.html:26
+msgid "Edit"
+msgstr ""
+
+#: templates/survey/editable_survey_list.html:26
+msgid "Transfer"
+msgstr ""
+
+#: templates/survey/editable_survey_list.html:26
+msgid "Publish"
+msgstr ""
+
+#: templates/survey/image_confirm_delete.html:11
+msgid "Are you sure you want to delete this image ?"
+msgstr ""
+
+#: templates/survey/survey_edit.html:11
+msgid "View Online"
+msgstr ""
+
+#: templates/survey/survey_edit.html:14
+msgid "Object type"
+msgstr ""
+
+#: templates/survey/survey_edit.html:14
+msgid "type"
+msgstr ""
+
+#: templates/survey/survey_edit.html:15
+msgid "Object"
+msgstr ""
+
+#: templates/survey/survey_edit.html:28 templates/survey/survey_edit.html:43
+#: templates/survey/survey_edit.html:57
+msgid "Update"
+msgstr ""
+
+#: templates/survey/survey_edit.html:35
+msgid "Question"
+msgstr ""
+
+#: templates/survey/survey_edit.html:50
+msgid "choice"
+msgstr ""
+
+#: templates/survey/survey_list.html:22
+msgid "You have"
+msgstr ""
+
+#: templates/survey/thankyou.html:4
+msgid "Thank you for you submission!"
+msgstr ""

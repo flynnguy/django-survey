@@ -1,0 +1,31 @@
+{% extends "survey/base.html" %}
+{% load i18n %}
+{% load survey %}
+{% block content %}
+
+<h1>Surveys</h1>
+<ul class="object-tools"><li><a href={% url survey-add %} class="addlink">{% trans "Add survey"  %}</a></li></ul>
+<fieldset class="module">
+<table style="width: 100%">
+    <thead><th>{% trans "Survey"%}</th><th>{% trans "Status"%}</th><th>{% trans "Info"%}</th><th>{% trans "Actions"%}</th></thead>
+    {% for survey in object_list %}
+    <tr class="{% cycle row1,row2 %}">
+        <td><a href='{% url survey-detail survey_slug=survey.slug %}'>{{ survey.title }}</a>
+        </td>
+        <td>{{ survey.status }}</td>
+        <td>
+        {% if user|can_view_answers:survey %}
+            {% if survey.interview_count %}
+                <a href='{% url survey-results survey_slug=survey.slug %}'>{{ survey.interview_count }} {% trans "Submission"%}{{ survey.interview_count|pluralize:"s" }}</a>
+            {% else %}
+                {% trans "No Submissions."%}
+            {% endif %}
+        {% endif %}
+        {% if request|has_answered:survey %}You have <a href='{% url answers-detail survey_slug=survey.slug,key=request.session.session_key %}'>{% trans "completed"%}</a> {% trans "this survey."%}{% endif %}
+        </td>
+        <td><a href='{% url survey-edit survey_slug=survey.slug %}'>{% trans "Edit"  %}</a> <a href='{% url survey-delete survey_slug=survey.slug %}'>{% trans "Delete"  %}</a> {% trans "Transfer" %} | {% trans "Publish" %}</td>
+    </tr>
+    {% endfor %}
+</table>
+</fieldset>
+{% endblock %}

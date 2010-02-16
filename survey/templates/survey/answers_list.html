@@ -1,0 +1,53 @@
+{% extends "survey/base.html" %}
+{% load i18n %}
+{% block scripts %}{% load adminmedia %}
+<style type="text/css">
+.question pre { margin-left: 2em; }
+.question .bar { margin-left: 2em; }
+.question .barAnswer { font-weight: bold; width: 100% !important; text-align: left;}
+.question .answer { margin-left: 2em; }
+.question .question-results .barColor {
+    background-color: #7ca0c7;
+    background-image: url({% admin_media_prefix %}img/admin/default-bg.gif);
+    background-repeat: repeat-x;
+    background-attachment: scroll;
+    padding: 0px;
+    background-x-position: left;
+    background-y-position: top;
+}
+</style>
+{% endblock %}
+{% block content %}
+<h1>{{ title }} <i>({{ survey.interview_count }} {% trans "Interview" %}{{ survey.interview_count|pluralize:"s" }})</i></h1>
+<br/>
+{% for question in survey.questions.all %}
+<div class='question'>
+    <h2 onmouseout='this.style.backgroundColor="#FFF";'
+        onmouseover='this.style.backgroundColor="#ECECEC";'
+        onclick='var foo=document.getElementById("results{{forloop.counter}}");
+                 if (foo.style.display=="none") { foo.style.display="block"; }
+                 else { foo.style.display="none"; }'
+    >{{ question.text }} <i>({{ question.answer_count }} {% if question.choices.count %}{% trans "Vote" %}{% else %}{% trans "Answer" %}{% endif %}{{ question.answer_count|pluralize:"s" }})</i></h2>
+    <div id='results{{forloop.counter}}' class='question-results'>
+{% if question.choices.count %}
+    {% for choice in question.choices.iterator %}
+        <table border="0" cellpadding="0" cellspacing="0" class="bar">
+            <caption class="barAnswer">{{ choice.text }}{% ifequal question.qtype "I" %}<br/><img src="{{ choice.image.url }}"/>{% endifequal %}</caption>
+            <tr>
+                <td style="width: {% widthratio choice.count question.answer_count 100 %}%" class="barColor">{% if choice.count %}&nbsp;{% endif %}</td>
+                <td class="barPercent"><strong class="barVotes">{{ choice.count }}&nbsp;{% trans "vote" %}{{ choice.count|pluralize:"s" }}</strong>&nbsp;/&nbsp;{% widthratio choice.count question.answer_count 100 %}%</td>
+            </tr>
+        </table>
+    {% endfor %}
+{% else %}
+    {% for answer in question.answers.all %}
+        <div>{% if view_submissions %}<a href='{% url answers-detail survey_slug=survey.slug,key=answer.session_key %}'>{% endif %}{% trans "Answer" %} {{ forloop.counter }}{% if view_submissions %}</a>{% endif %} {% trans "of" %} {{ question.answer_count }}</div>
+        <div class="answer">{{ answer.text }}</div>
+        <hr/>
+    {% endfor %}
+{% endif %}
+    <br/>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

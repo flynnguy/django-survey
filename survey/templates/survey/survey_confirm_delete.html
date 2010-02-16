@@ -1,0 +1,18 @@
+{% extends "survey/base.html" %}{% load i18n %}
+{% block styles %}
+<style type="text/css">
+input[type="radio"] { vertical-align: top; }
+</style>
+{% endblock %}
+{% block content %}
+<h1>{{ title }}</h1>
+
+<form method="post" class="focus-input" action="">
+    {% trans 'Are you sure you want to delete the following survey ?' %}
+    <ul>
+        <li>{{survey}}</li>
+    </ul>
+{% for question in survey.forms %}{{ question.as_p }}{% endfor %}
+<div class="submit-row"><input type="submit" value="{% trans 'Delete' %}" class="default" name="__delete" /></div>
+</form>
+{% endblock %}

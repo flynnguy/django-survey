@@ -1,0 +1,369 @@
+# Translation for django-survey
+# Copyright (C) 2007-
+# This file is distributed under the same license as the django-survey package
+# Igor Tamara <igor@tamarapatino.org>, 2008.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-10-10 17:19-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Igor Tamara <igor@tamarapatino.org>\n"
+"Language-Team: Spanish <igor@tamarapatino.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: forms.py:32
+msgid "this question is optional"
+msgstr "esta pregunta es opcional"
+
+#: forms.py:48 forms.py:107 forms.py:141 forms.py:149
+msgid "This field is required."
+msgstr "Campo requerido."
+
+#: forms.py:144
+msgid "Invalid Choice."
+msgstr "Opción Inválida"
+
+#: forms.py:220
+msgid "Date:"
+msgstr "Fecha:"
+
+#: forms.py:220
+msgid "Time:"
+msgstr "Hora:"
+
+#: forms.py:234 forms.py:237
+msgid "The title of the survey must be unique."
+msgstr "No se puede repetir el título de la encuesta "
+
+#: models.py:35
+msgid "survey title"
+msgstr "título de la encuesta"
+
+#: models.py:36
+msgid "slug"
+msgstr "palabras clave"
+
+#: models.py:37
+msgid "description"
+msgstr "descripción"
+
+#: models.py:38
+msgid ""
+"This field appears on the public web site and should give an overview to the "
+"interviewee"
+msgstr ""
+"Este campo aparece en la parte pública del sitio web y debería ofrecer una "
+"descripción de la entrevista"
+
+#: models.py:42
+msgid "survey starts accepting submissions on"
+msgstr "Comienzo del diligenciamiento de la encuesta el"
+
+#: models.py:43
+msgid "survey stops accepting submissions on"
+msgstr "La encuesta deja de ser diligenciada el"
+
+#: models.py:45
+msgid "survey is visible"
+msgstr "la encuesta es visible"
+
+#: models.py:46
+msgid "survey results are public"
+msgstr "los resultados de la encuesta son públicos"
+
+#: models.py:47
+msgid "restrict the survey to authentified user"
+msgstr "restringir la encuesta a usuarios autenticados"
+
+#: models.py:49
+msgid "allows multiple interviews"
+msgstr "permitir diligenciar varias veces"
+
+#: models.py:51
+msgid "template name"
+msgstr "nombre de la plantilla"
+
+#: models.py:53
+msgid ""
+"This field is used to define a custom template (Example: 'dj_survey/template/"
+"my_add_interview_forms.html')."
+msgstr ""
+"Este campo se usa para especificar una plantilla propia (Ejemplo:'dj_survey/"
+"template/my_add_interview_forms.html)."
+
+#: models.py:100
+msgid "private"
+msgstr "privado"
+
+#: models.py:101
+msgid "open"
+msgstr "abierta"
+
+#: models.py:103
+msgid "opens "
+msgstr "abre "
+
+#: models.py:104
+msgid "closed"
+msgstr "cerrada"
+
+#: models.py:161
+msgid "survey"
+msgstr "encuesta"
+
+#: models.py:162
+msgid "question type"
+msgstr "tipo de pregunta"
+
+#: models.py:164
+msgid "required"
+msgstr "requerido"
+
+#: models.py:165
+msgid "question text"
+msgstr "texto de la pregunta"
+
+#: models.py:166 models.py:227 templates/survey/survey_edit.html:14
+msgid "order"
+msgstr "orden"
+
+#: models.py:170 models.py:223
+msgid "image"
+msgstr "imagen"
+
+#: models.py:175
+msgid "minimum number of choices"
+msgstr "cantidad mínima de opciones"
+
+#: models.py:177
+msgid "maximum number of choices"
+msgstr "cantidad máxima de opciones"
+
+#: models.py:181
+msgid "Html Style"
+msgstr "Estilo Html"
+
+#: models.py:219 models.py:255
+msgid "question"
+msgstr "pregunta"
+
+#: models.py:220
+msgid "choice text"
+msgstr "texto de la opción"
+
+#: models.py:252
+msgid "user"
+msgstr "usuario"
+
+#: models.py:258
+msgid "session key"
+msgstr "llave de sesión"
+
+#: models.py:259
+msgid "answer text"
+msgstr "texto de respuesta"
+
+#: models.py:262
+msgid "Interview unique identifier"
+msgstr "identificador único de entrevista"
+
+#: views.py:64
+msgid "Thank You"
+msgstr "Gracias"
+
+#: views.py:93
+msgid "Cookies must be enabled."
+msgstr "Debe habilitar las Cookies."
+
+#: views.py:156 views.py:184
+msgid "Add a survey"
+msgstr "Agregar encuesta"
+
+#: views.py:204
+msgid "Delete survey"
+msgstr "Borrar encuesta"
+
+#: views.py:228 templates/survey/survey_edit.html:30
+msgid "Add a question"
+msgstr "Agregar pregunta"
+
+#: views.py:259
+msgid "Update question"
+msgstr "Actualizar pregunta"
+
+#: views.py:283
+msgid "Delete question"
+msgstr "Borrar pregunta"
+
+#: views.py:308 templates/survey/survey_edit.html:45
+msgid "Add a choice"
+msgstr "Agregar opción"
+
+#: views.py:336
+msgid "Update choice"
+msgstr "Actualizar opción"
+
+#: views.py:359
+msgid "Delete choice"
+msgstr "Borrar opción"
+
+#: views.py:377 views.py:394 templates/survey/survey_list.html:4
+msgid "Surveys"
+msgstr "Encuestas"
+
+#: views.py:417 views.py:447
+msgid "Insufficient Privileges."
+msgstr "Privilegios insuficientes."
+
+#: views.py:421
+msgid "Results"
+msgstr "Resultados"
+
+#: views.py:450 templates/survey/editable_survey_list.html:19
+msgid "Submission"
+msgstr "Enviar"
+
+#: templates/admin/survey/choice/edit_inline_tabular.html:14
+#: templates/admin/survey/question/edit_inline_tabular.html:14
+#: templates/survey/choice_confirm_delete.html:15
+#: templates/survey/editable_survey_list.html:26
+#: templates/survey/image_confirm_delete.html:14
+#: templates/survey/question_confirm_delete.html:15
+#: templates/survey/survey_confirm_delete.html:16
+#: templates/survey/survey_edit.html:29 templates/survey/survey_edit.html:44
+#: templates/survey/survey_edit.html:58
+msgid "Delete"
+msgstr "Borrar"
+
+#: templates/survey/answers_list.html:21
+msgid "Interview"
+msgstr "Entrevista"
+
+#: templates/survey/answers_list.html:30
+msgid "Vote"
+msgstr "Votar"
+
+#: templates/survey/answers_list.html:30 templates/survey/answers_list.html:44
+msgid "Answer"
+msgstr "Respuesta"
+
+#: templates/survey/answers_list.html:38
+msgid "vote"
+msgstr "voto"
+
+#: templates/survey/answers_list.html:44
+msgid "of"
+msgstr "de"
+
+#: templates/survey/choice_add.html:10
+msgid "Delete Image"
+msgstr "Borrar Imagen"
+
+#: templates/survey/choice_add.html:15 templates/survey/question_add.html:16
+#: templates/survey/survey_add.html:19 templates/survey/survey_detail.html:18
+#: templates/test/survey_detail.html:21
+msgid "Submit"
+msgstr "Enviar"
+
+#: templates/survey/choice_confirm_delete.html:11
+#: templates/survey/question_confirm_delete.html:11
+#: templates/survey/survey_confirm_delete.html:11
+msgid "Are you sure you want to delete the following survey ?"
+msgstr "¿Está seguro que quiere borrar la siguiente encuesta?"
+
+#: templates/survey/editable_survey_list.html:7
+msgid "Add survey"
+msgstr "Agregar encuesta"
+
+#: templates/survey/editable_survey_list.html:10
+#: templates/survey/survey_edit.html:18 templates/survey/survey_list.html:7
+msgid "Survey"
+msgstr "Encuesta"
+
+#: templates/survey/editable_survey_list.html:10
+#: templates/survey/survey_list.html:7
+msgid "Status"
+msgstr "Estado"
+
+#: templates/survey/editable_survey_list.html:10
+#: templates/survey/survey_list.html:7
+msgid "Info"
+msgstr "Información"
+
+#: templates/survey/editable_survey_list.html:10
+#: templates/survey/survey_edit.html:15
+msgid "Actions"
+msgstr "Acciones"
+
+#: templates/survey/editable_survey_list.html:21
+#: templates/survey/survey_list.html:19
+msgid "No Submissions."
+msgstr "Sin diligenciar."
+
+#: templates/survey/editable_survey_list.html:24
+#: templates/survey/survey_list.html:22
+msgid "completed"
+msgstr "completada"
+
+#: templates/survey/editable_survey_list.html:24
+#: templates/survey/survey_list.html:22
+msgid "this survey."
+msgstr "esta encuesta."
+
+#: templates/survey/editable_survey_list.html:26
+msgid "Edit"
+msgstr "Editar"
+
+#: templates/survey/editable_survey_list.html:26
+msgid "Transfer"
+msgstr "Transferir"
+
+#: templates/survey/editable_survey_list.html:26
+msgid "Publish"
+msgstr "Publicar"
+
+#: templates/survey/image_confirm_delete.html:11
+msgid "Are you sure you want to delete this image ?"
+msgstr "¿Seguro desea borrar esta imagen?"
+
+#: templates/survey/survey_edit.html:11
+msgid "View Online"
+msgstr "Ver en línea"
+
+#: templates/survey/survey_edit.html:14
+msgid "Object type"
+msgstr "Tipo de Objeto"
+
+#: templates/survey/survey_edit.html:14
+msgid "type"
+msgstr "tipo"
+
+#: templates/survey/survey_edit.html:15
+msgid "Object"
+msgstr "Objeto"
+
+#: templates/survey/survey_edit.html:28 templates/survey/survey_edit.html:43
+#: templates/survey/survey_edit.html:57
+msgid "Update"
+msgstr "Actualizar"
+
+#: templates/survey/survey_edit.html:35
+msgid "Question"
+msgstr "Pregunta"
+
+#: templates/survey/survey_edit.html:50
+msgid "choice"
+msgstr "opción"
+
+#: templates/survey/survey_list.html:22
+msgid "You have"
+msgstr "Usted tiene"
+
+#: templates/survey/thankyou.html:4
+msgid "Thank you for you submission!"
+msgstr "Gracias por su opinión!"

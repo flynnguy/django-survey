@@ -1,0 +1,5 @@
+This is a start for django-survey. It is currently a fork of:
+http://code.google.com/p/django-survey/
+
+as not much seems to be happening with it. I've made a few changes and have
+made them available here under the same MIT license.

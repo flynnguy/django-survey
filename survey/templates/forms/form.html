@@ -1,0 +1,9 @@
+{% for bound_field in bound_fields %}
+    {% if forloop.first %}
+        <div {{ bound_field.form.question.qstyle|default_if_none:""|safe }}>
+    {% endif %}
+    {% include "forms/field.html" %}
+    {% if forloop.first %}
+        </div>
+    {% endif %}
+{% endfor %}

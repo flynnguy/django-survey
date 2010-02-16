@@ -1,0 +1,8 @@
+{% if bound_field.errors %}<p>{{ bound_field.errors }}</p>{% endif %}
+
+<span class="{{ bound_field.field.required|yesno:"required,optional"}}"> {{bound_field.label_tag }} </span>
+{% if bound_field.help_text %} <span class="helptext">({{ bound_field.help_text }})</span> {% endif %}
+{% if bound_field.form.question.get_image_url %}<img src="{{ bound_field.form.question.get_image_url }}"</img>{% endif %}
+{% if bound_field.form.question.image %}<div class="question_img"><img src="{{ bound_field.form.question.image.url }}" alt="Question Picture"></div>{% endif %}
+{% if bound_field.form.choice.get_image_url %}<img src="{{ bound_field.form.choice.get_image_url }}"</img>{% endif %}
+{{ bound_field }}

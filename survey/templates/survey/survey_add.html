@@ -1,0 +1,21 @@
+{% extends "survey/base.html" %}{% load i18n %}
+{% block scripts %}
+{{form.media|safe}}
+{% endblock %}
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="/media/css/forms.css" />
+<style type="text/css">
+input[type="radio"] { vertical-align: top; }
+</style>
+{% endblock %}
+{% block content %}
+<h1>{{ title }}</h1>
+
+<form method="post" class="focus-input" action="">
+    <table>
+    {{form}}
+    </table>
+
+<div class="submit-row"><input type="submit" value="{% trans 'Submit' %}" class="default" name="__AddSurvey" /></div>
+</form>
+{% endblock %}

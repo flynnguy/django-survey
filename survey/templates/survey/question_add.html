@@ -1,0 +1,18 @@
+{% extends "survey/base.html" %}{% load i18n %}
+{% block styles %}
+<style type="text/css">
+input[type="radio"] { vertical-align: top; }
+</style>
+{% endblock %}
+{% block content %}
+<h1>{{ title }}</h1>
+
+{% if question.image %}
+    <a href="{% url delete-image model_string=model_string,object_id=question.id %}">Delete Image</a>
+    <img src="{{ question.get_image_url }}" />
+{% endif %}
+<form enctype="multipart/form-data" method="post" class="focus-input" action="">
+    {{form.as_p}}
+<div class="submit-row"><input type="submit" value="{% trans 'Submit' %}" class="default" name="__AddQuestion" /></div>
+</form>
+{% endblock %}

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+{% load adminmedia %}
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="" >
+<head>
+<title>{% if title %}{{ title }}{% else %}Survey Example{% endif %}</title>
+<meta name="robots" content="NONE,NOARCHIVE" />
+{% block scripts %}
+{% endblock scripts %}
+<link rel="stylesheet" type="text/css" href="{% admin_media_prefix %}css/dashboard.css" />
+{% block styles %}
+{% endblock styles %}
+</head>
+{% load i18n %}
+<body class="dashboard">
+
+<!-- Container -->
+<div id="container">
+    <!-- Header -->
+    <div id="header">
+        <div id="branding">
+
+<h1 id="site-name">{% trans "Survey Example" noop %}</h1>
+
+        </div>
+
+        <div id="user-tools">
+            {% if user.is_authenticated %}
+                {% trans "Welcome" noop %} <strong>{{user}}</strong> -
+                - <a href="/admin/password_change/">{% trans 'Change password' %}</a>
+                / <a href="/admin/logout/">{% trans 'Log out' %}</a> /
+            {%endif%}
+            <a href="/admin/">admin</a>
+        </div>
+
+
+    </div>
+    <!-- END Header -->
+
+    <!-- Content -->
+    <div id="content" class="colMS">
+
+            {% block content %}
+            Content.
+            {% endblock content %}
+    </div>
+</div>
+</body>

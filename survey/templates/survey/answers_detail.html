@@ -1,0 +1,9 @@
+{% extends "survey/base.html" %}
+{% block content %}
+<h1>{{ title }}</h1>
+{% for answer in submission %}
+<h2>{{ answer.question.text }}</h2>
+<div>{{ answer.text }}</div>
+<br/>
+{% endfor %}
+{% endblock %}
