@@ -186,24 +186,6 @@ def survey_update(request, survey_slug,
                                'form' : survey_form},
                               context_instance=RequestContext(request))
 
-@login_required()
-def survey_delete(request,survey_slug=None,
-               group_slug=None, group_slug_field=None,
-               group_qs=None,
-               template_name = "survey/editable_survey_list.html",
-               extra_context=None,
-               *args, **kw):
-    # TRICK: The following line does not have any logical explination
-    # except than working around a bug in FF. It has been suggested there
-    # http://groups.google.com/group/django-users/browse_thread/thread/e6c96ab0538a544e/0e01cdda3668dfce#0e01cdda3668dfce
-    request_post = request.POST.copy()
-    return delete_object(request, slug=survey_slug,
-        **{"model":Survey,
-         "post_delete_redirect": reverse("surveys-editable",kwargs={}),
-         "template_object_name":"survey",
-         "login_required": True,
-         'extra_context': {'title': _('Delete survey')}
-        })
 
 @login_required()
 def question_add(request,survey_slug,
@@ -264,27 +246,6 @@ def question_update(request,survey_slug,question_id,
                               context_instance=RequestContext(request))
 
 @login_required()
-def question_delete(request,survey_slug,question_id,
-                    group_slug=None, group_slug_field=None,
-                    group_qs=None,
-                    template_name = None,
-                    extra_context=None,
-                    *args, **kw):
-    # TRICK: The following line does not have any logical explination
-    # except than working around a bug in FF. It has been suggested there
-    # http://groups.google.com/group/django-users/browse_thread/thread/e6c96ab0538a544e/0e01cdda3668dfce#0e01cdda3668dfce
-    request_post = request.POST.copy()
-    return delete_object(request, object_id=question_id,
-        **{"model":Question,
-         "post_delete_redirect": reverse("survey-edit",None,(),
-                                         {"survey_slug":survey_slug,
-                                          "group_slug":group_slug}),
-         "template_object_name":"question",
-         "login_required": True,
-         'extra_context': {'title': _('Delete question')}
-        })
-
-@login_required()
 def choice_add(request,question_id,
                 group_slug=None, group_slug_field=None,
                 group_qs=None,
@@ -341,25 +302,41 @@ def choice_update(request,question_id, choice_id,
                               context_instance=RequestContext(request))
 
 @login_required()
-def choice_delete(request,survey_slug,choice_id,
-                group_slug=None, group_slug_field=None,
-                group_qs=None,
-                template_name = 'survey/choice_add.html',
-                extra_context=None,
-                *args, **kw):
+def object_delete(request, survey_slug, object_id=None, 
+                  group_slug=None, group_slug_field=None,
+                  group_qs=None,
+                  template_name=None,
+                  extra_context=None,
+                  object_type=None,
+                  *args, **kw):
+    """
+    Refactored from all the whatever_delete() functions there were.
+    """
     # TRICK: The following line does not have any logical explination
     # except than working around a bug in FF. It has been suggested there
     # http://groups.google.com/group/django-users/browse_thread/thread/e6c96ab0538a544e/0e01cdda3668dfce#0e01cdda3668dfce
     request_post = request.POST.copy()
-    return delete_object(request, object_id=choice_id,
-        **{"model":Choice,
-         "post_delete_redirect": reverse("survey-edit",None,(),
-                                         {"survey_slug":survey_slug}),
-         "template_object_name":"choice",
-         "login_required": True,
-         'extra_context': {'title': _('Delete choice')}
-        })
+    if not object_type:
+        raise Http404
 
+    if not object_id and object_type == 'survey':
+        return delete_object(request, slug=survey_slug, 
+            **{"model":models.get_model("survey", object_type),
+             "post_delete_redirect": reverse("survey-editable", kwargs={}),
+             "template_object_name": object_type,
+             "login_required": True,
+             'extra_context': {'title': _('Delete %s' % object_type )}
+            })
+
+    return delete_object(request, object_id=object_id,
+        **{"model":models.get_model("survey", object_type),
+         "post_delete_redirect": reverse("survey-edit", None, (),
+                                         {"survey_slug": survey_slug }),
+         "template_object_name": object_type,
+         "login_required": True,
+         'extra_context': {'title': _('Delete %s' % object_type )}
+        })
+    
 
 def visible_survey_list(request,
                         group_slug=None, group_slug_field=None, group_qs=None,
