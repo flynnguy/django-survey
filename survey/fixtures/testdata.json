@@ -1,0 +1,370 @@
+[
+    {
+        "pk": 1, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "admin", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": true, 
+            "is_staff": true, 
+            "last_login": "2009-03-11 21:22:09", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "sha1$00bd9$580305d34647c238c3017e3f0d8082cf2ed42019", 
+            "email": "admin@nospam.fr", 
+            "date_joined": "2008-06-15 15:29:15"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "auth.user", 
+        "fields": {
+            "username": "test", 
+            "first_name": "", 
+            "last_name": "", 
+            "is_active": true, 
+            "is_superuser": false, 
+            "is_staff": false, 
+            "last_login": "2010-02-17 17:10:40", 
+            "groups": [], 
+            "user_permissions": [], 
+            "password": "sha1$665e2$2051e608250e0347f96ca86d2e3e668e6e0442d3", 
+            "email": "", 
+            "date_joined": "2010-02-17 17:10:40"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "sites.site", 
+        "fields": {
+            "domain": "example.com", 
+            "name": "example.com"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "survey.survey", 
+        "fields": {
+            "closes": "2098-06-15 22:31:00", 
+            "editable_by": 1, 
+            "description": "this is a test", 
+            "title": "mysurvey", 
+            "restricted": false, 
+            "allows_multiple_interviews": true, 
+            "created_by": 1, 
+            "public": false, 
+            "visible": true, 
+            "recipient_id": null, 
+            "recipient_type": null, 
+            "slug": "mysurvey", 
+            "opens": "2008-05-15 22:30:49"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "survey.survey", 
+        "fields": {
+            "closes": "2008-11-29 21:14:13", 
+            "editable_by": 1, 
+            "description": "", 
+            "title": "Test Checkbox List and no image", 
+            "restricted": false, 
+            "allows_multiple_interviews": true, 
+            "created_by": 1, 
+            "public": true, 
+            "visible": true, 
+            "recipient_id": null, 
+            "recipient_type": null, 
+            "slug": "test-checkbox-list-and-no-image", 
+            "opens": "2008-10-28 21:14:11"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "survey.question", 
+        "fields": {
+            "text": "Is it working?", 
+            "image": "", 
+            "required": true, 
+            "choice_num_min": null, 
+            "choice_num_max": null, 
+            "survey": 1, 
+            "qstyle": "", 
+            "qtype": "R", 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "survey.question", 
+        "fields": {
+            "text": "Is it working now ?", 
+            "image": "", 
+            "required": true, 
+            "choice_num_min": null, 
+            "choice_num_max": null, 
+            "survey": 2, 
+            "qstyle": "", 
+            "qtype": "C", 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "survey.question", 
+        "fields": {
+            "text": "select an image", 
+            "image": "survey/images/questions/2008/10/22/icon-yes.gif", 
+            "required": true, 
+            "choice_num_min": null, 
+            "choice_num_max": null, 
+            "survey": 1, 
+            "qstyle": "", 
+            "qtype": "I", 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "survey.question", 
+        "fields": {
+            "text": "text question", 
+            "image": "", 
+            "required": false, 
+            "choice_num_min": null, 
+            "choice_num_max": null, 
+            "survey": 1, 
+            "qstyle": "", 
+            "qtype": "T", 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "survey.choice", 
+        "fields": {
+            "text": "yes", 
+            "image": "", 
+            "question": 1, 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "survey.choice", 
+        "fields": {
+            "text": "no", 
+            "image": "survey/images/questions/2008/10/22/icon-no.gif", 
+            "question": 2, 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "survey.choice", 
+        "fields": {
+            "text": "Yes", 
+            "image": "", 
+            "question": 3, 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "survey.choice", 
+        "fields": {
+            "text": "no", 
+            "image": "", 
+            "question": 1, 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "survey.choice", 
+        "fields": {
+            "text": "yes", 
+            "image": "survey/images/questions/2008/10/22/icon-yes_.gif", 
+            "question": 2, 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "survey.choice", 
+        "fields": {
+            "text": "No", 
+            "image": "", 
+            "question": 3, 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "survey.choice", 
+        "fields": {
+            "text": "maybe", 
+            "image": "survey/images/questions/2008/10/22/icon-unknown.gif", 
+            "question": 2, 
+            "order": null
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "survey.answer", 
+        "fields": {
+            "submission_date": "2009-03-11 21:51:26", 
+            "interview_uuid": "c22b210bc1d247a78473067909f8ebff", 
+            "text": "yes", 
+            "question": 1, 
+            "user": 1, 
+            "session_key": "5ddba102d9ee6c901947eaa49c186f8b"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "survey.answer", 
+        "fields": {
+            "submission_date": "2008-06-15 15:44:08", 
+            "interview_uuid": "762562a76989475aac28174751ec053b", 
+            "text": "yes", 
+            "question": 1, 
+            "user": null, 
+            "session_key": "c89bea45120646c0d2f2e5bbef484279"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "survey.answer", 
+        "fields": {
+            "submission_date": "2008-06-15 15:46:16", 
+            "interview_uuid": "78388e1f62f74ec38185a9c05defdb46", 
+            "text": "no", 
+            "question": 1, 
+            "user": null, 
+            "session_key": "c89bea45120646c0d2f2e5bbef484279"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "survey.answer", 
+        "fields": {
+            "submission_date": "2008-10-22 16:43:50", 
+            "interview_uuid": "c034e79c457940c3a59bd9c846c66553", 
+            "text": "yes", 
+            "question": 1, 
+            "user": 1, 
+            "session_key": "fd6c71feef8796a732e9fd09205d1951"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "survey.answer", 
+        "fields": {
+            "submission_date": "2009-03-11 21:51:26", 
+            "interview_uuid": "c22b210bc1d247a78473067909f8ebff", 
+            "text": "no", 
+            "question": 2, 
+            "user": 1, 
+            "session_key": "5ddba102d9ee6c901947eaa49c186f8b"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "survey.answer", 
+        "fields": {
+            "submission_date": "2008-10-22 16:51:27", 
+            "interview_uuid": "c86c0de724484522aab4c284e3cf860f", 
+            "text": "yes", 
+            "question": 1, 
+            "user": 1, 
+            "session_key": "fd6c71feef8796a732e9fd09205d1951"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "survey.answer", 
+        "fields": {
+            "submission_date": "2008-10-22 16:51:27", 
+            "interview_uuid": "c86c0de724484522aab4c284e3cf860f", 
+            "text": "yes<br/><img src=\"/site_media/survey/images/questions/2008/10/22/icon-yes_.gif\"/>", 
+            "question": 2, 
+            "user": 1, 
+            "session_key": "fd6c71feef8796a732e9fd09205d1951"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "survey.answer", 
+        "fields": {
+            "submission_date": "2008-10-29 20:16:34", 
+            "interview_uuid": "", 
+            "text": "Yes", 
+            "question": 3, 
+            "user": null, 
+            "session_key": "acb745c5d51d359f6d8e262ec7905bbf"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "survey.answer", 
+        "fields": {
+            "submission_date": "2009-03-11 20:35:58", 
+            "interview_uuid": "f0786ed0eb484c9fa700d94bc111efb9", 
+            "text": "yes", 
+            "question": 1, 
+            "user": null, 
+            "session_key": "8bde37e09528dba48ad7757eee25347a"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "survey.answer", 
+        "fields": {
+            "submission_date": "2009-03-11 20:35:58", 
+            "interview_uuid": "f0786ed0eb484c9fa700d94bc111efb9", 
+            "text": "yes<br/><img src=\"/site_media/survey/images/questions/2008/10/22/icon-yes_.gif\"/>", 
+            "question": 2, 
+            "user": null, 
+            "session_key": "8bde37e09528dba48ad7757eee25347a"
+        }
+    }, 
+    {
+        "pk": 11, 
+        "model": "survey.answer", 
+        "fields": {
+            "submission_date": "2009-03-11 21:22:02", 
+            "interview_uuid": "5d79ce880d274c4db447b63898ac1f38", 
+            "text": "no", 
+            "question": 1, 
+            "user": null, 
+            "session_key": "f756621b1715311989bc53626db7bdaa"
+        }
+    }, 
+    {
+        "pk": 12, 
+        "model": "survey.answer", 
+        "fields": {
+            "submission_date": "2009-03-11 21:22:02", 
+            "interview_uuid": "5d79ce880d274c4db447b63898ac1f38", 
+            "text": "no", 
+            "question": 2, 
+            "user": null, 
+            "session_key": "f756621b1715311989bc53626db7bdaa"
+        }
+    }, 
+    {
+        "pk": 13, 
+        "model": "survey.answer", 
+        "fields": {
+            "submission_date": "2009-03-11 21:51:26", 
+            "interview_uuid": "c22b210bc1d247a78473067909f8ebff", 
+            "text": "hello", 
+            "question": 4, 
+            "user": 1, 
+            "session_key": "5ddba102d9ee6c901947eaa49c186f8b"
+        }
+    }
+]
