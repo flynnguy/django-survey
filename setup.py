@@ -6,6 +6,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
+    test_suite = 'survey.runtests.runtests',
 
     author='Christopher Flynn, Yann Malet, Doug Napoleone',
     author_email='chris@flynnguy.com',
