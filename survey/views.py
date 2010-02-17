@@ -6,7 +6,8 @@ from django.db.models import Q
 from django.conf import settings
 from django.core.cache import cache
 from django.core.urlresolvers import reverse
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.views import redirect_to_login
 from django.http import HttpResponseRedirect, HttpResponse, Http404
 from django.http import HttpResponseNotFound
@@ -113,7 +114,8 @@ def survey_detail(request, survey_slug,
 # TODO: ajaxify this page (jquery) : add a date picker, ...
 # TODO: Fix the bug that make the questions and the choices unordered
 
-@login_required()
+@staff_member_required
+@permission_required('survey.change_survey')
 def survey_edit(request,survey_slug,
                group_slug=None, group_slug_field=None, group_qs=None,
                template_name = "survey/survey_edit.html",
@@ -125,11 +127,9 @@ def survey_edit(request,survey_slug,
                                'group_slug': group_slug},
                               context_instance=RequestContext(request))
 
-# TODO: Refactor the object add to avoid the code duplication.
-# def object_add(request, object, form, template_name,
-# post_create_redirect, extra_context):
 
-@login_required()
+@staff_member_required
+@permission_required('survey.add_survey')
 def survey_add(request,
                group_slug=None, group_slug_field=None, group_qs=None,
                template_name = 'survey/survey_add.html',
@@ -158,7 +158,8 @@ def survey_add(request,
                                'form' : survey_form},
                               context_instance=RequestContext(request))
 
-@login_required()
+@staff_member_required
+@permission_required('survey.change_survey')
 def survey_update(request, survey_slug,
                group_slug=None, group_slug_field=None, group_qs=None,
                template_name = 'survey/survey_add.html',
@@ -187,7 +188,8 @@ def survey_update(request, survey_slug,
                               context_instance=RequestContext(request))
 
 
-@login_required()
+@staff_member_required
+@permission_required('survey.add_question')
 def question_add(request,survey_slug,
                group_slug=None, group_slug_field=None,
                group_qs=None,
@@ -212,7 +214,8 @@ def question_add(request,survey_slug,
                                'form' : question_form},
                               context_instance=RequestContext(request))
 
-@login_required()
+@staff_member_required
+@permission_required('survey.change_question')
 def question_update(request,survey_slug,question_id,
                     group_slug=None, group_slug_field=None,
                     group_qs=None,
@@ -245,7 +248,8 @@ def question_update(request,survey_slug,question_id,
                                'form' : question_form},
                               context_instance=RequestContext(request))
 
-@login_required()
+@staff_member_required
+@permission_required('survey.add_choice')
 def choice_add(request,question_id,
                 group_slug=None, group_slug_field=None,
                 group_qs=None,
@@ -271,7 +275,8 @@ def choice_add(request,question_id,
                                'form' : choice_form},
                               context_instance=RequestContext(request))
 
-@login_required()
+@staff_member_required
+@permission_required('survey.update_choice')
 def choice_update(request,question_id, choice_id,
                 group_slug=None, group_slug_field=None,
                 group_qs=None,
@@ -301,7 +306,8 @@ def choice_update(request,question_id, choice_id,
                                'form' : choice_form},
                               context_instance=RequestContext(request))
 
-@login_required()
+@staff_member_required
+@permission_required('survey.update_choice')
 def object_delete(request, survey_slug, object_id=None, 
                   group_slug=None, group_slug_field=None,
                   group_qs=None,
@@ -356,7 +362,7 @@ def visible_survey_list(request,
         )
 
 
-@login_required()
+@staff_member_required
 def editable_survey_list(request,
                          group_slug=None, group_slug_field=None, group_qs=None,
                          template_name = "survey/editable_survey_list.html",
